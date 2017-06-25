@@ -1,0 +1,77 @@
+/*variables*/
+@margin-small: 10px;
+@margin-medium: 20px;
+@margin-large: 40px;
+@arrow-size: 3rem;
+
+body{margin: 0;}
+.recommendations-container{
+	margin-top: @margin-large;
+	& *{
+		font-family: arial;
+		font-size: 0.8rem;
+		color: black;
+		text-transform: uppercase;
+		text-decoration: none;
+	}
+}
+.recom-product{
+	width: 300px;
+	margin: 0 @margin-small;
+	& img{
+		width: 100%;
+		margin-bottom: @margin-medium;
+	}
+}
+.recom-title{
+	text-align: center;
+	border-bottom: 1px solid black;
+	width: 100%;
+	margin-bottom: @margin-medium;	
+}
+.product-name{
+	margin-bottom: 5px;
+	font-weight: 600;
+}
+
+/*Overriding Slick default styling*/
+.slick-arrow{
+	width: 50px;
+	cursor: pointer;
+	font-size: 0;
+	background: transparent;
+	border: none;
+	position: absolute;
+	top: 40%;
+	webkit-transform: translate(0,-50%);
+	-ms-transform: translate(0,-50%);
+	transform: translate(0,-50%);
+}
+.slick-prev{
+	z-index: 1;
+	left: 0;
+	&:before{
+		content: '\2039';
+		font-size: @arrow-size;
+	}
+}
+.slick-next{
+	right: 0;
+	&:before{
+		content: '\203A';
+		font-size: @arrow-size;
+	}
+}
+
+/*mob + tab*/
+@media only screen and (max-width: 1024px) {
+	.recom-product-wrapper{
+		margin: 0 @margin-small;
+	}
+}
+/*dt*/
+@media only screen and (min-width: 1025px) {
+	.recom-product-wrapper{
+		margin: 0 @margin-large;
+	}
+}
